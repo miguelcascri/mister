@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class Player extends Authenticatable
+class Clasificacion extends Authenticatable
 {
     use HasFactory;
 
@@ -18,9 +18,11 @@ class Player extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'nombre',
-        'apellidos',
-        'pagado',
-        'state',
+        'jornada',
+        'puesto16',
+        'puesto15',
+        'puesto14',
+        'puesto13',
+        'puesto12',
     ];
 }

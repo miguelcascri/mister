@@ -20,7 +20,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-              <a class="navbar-brand">ADMINISTRACION</a>
+              <a class="navbar-brand"></a>
             </div>
         </nav>
         <main class="py-4">

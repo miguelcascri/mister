@@ -30,7 +30,7 @@
                     <input type="submit" style="width: 40%" class="btn btn-primary" value="Guardar Cambios">
 
 
-                    <a class="btn btn-secondary" href="../">Atras</a>
+                    <a class="btn btn-secondary" href="../jugadores">Atras</a>
                 </div>
 
 

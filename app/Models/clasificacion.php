@@ -17,6 +17,7 @@ class Clasificacion extends Authenticatable
      *
      * @var array<int, string>
      */
+    protected $table='clasificacion';
     protected $fillable = [
         'jornada',
         'puesto16',

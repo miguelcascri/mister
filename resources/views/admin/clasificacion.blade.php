@@ -4,7 +4,66 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <button class="mb-4 btn btn-primary">Añadir Nueva Jornada</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                    + Nueva jornada
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Nueva Jornada</h5>
+                            </div>
+                            <div class="modal-body">
+                                <form action="{{ route('nuevajornada') }}" method="get">
+                                    @csrf
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">Jornada</label>
+                                        <input class="form-control" type="number" name="jornada">
+                                        <label for="exampleInputEmail1" class="form-label"><b>Puesto 12</b></label>
+                                        <select class="form-select form-select mb-3" name="puesto12">
+                                        @foreach($Allplayer as $key)
+                                            <option value="{{$key->id}}">{{$key -> nombre }}{{$key->apellidos}}</option>
+                                        @endforeach
+                                        </select>
+                                        <label for="exampleInputEmail1" class="form-label"><b>Puesto 13</b></label>
+                                        <select class="form-select form-select mb-3" name="puesto13">
+                                        @foreach($Allplayer as $key)
+                                            <option value="{{$key->id}}">{{$key -> nombre }}{{$key->apellidos}}</option>
+                                        @endforeach
+                                        </select>
+                                        <label for="exampleInputEmail1" class="form-label"><b>Puesto 14</b></label>
+                                        <select class="form-select form-select mb-3" name="puesto14">
+                                        @foreach($Allplayer as $key)
+                                            <option value="{{$key->id}}">{{$key -> nombre }}{{$key->apellidos}}</option>
+                                        @endforeach
+                                        </select>
+                                        <label for="exampleInputEmail1" class="form-label"><b>Puesto 15</b></label>
+                                        <select class="form-select form-select mb-3" name="puesto15">
+                                        @foreach($Allplayer as $key)
+                                            <option value="{{$key->id}}">{{$key -> nombre }}{{$key->apellidos}}</option>
+                                        @endforeach
+                                        </select>
+                                        <label for="exampleInputEmail1" class="form-label"><b>Puesto 16</b></label>
+                                        <select class="form-select form-select mb-3" name="puesto16">
+                                        @foreach($Allplayer as $key)
+                                            <option value="{{$key->id}}">{{$key -> nombre }}{{$key->apellidos}}</option>
+                                        @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary">Añadir</button>
+                                    </div>
+
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="col-md-4">
                 <div class="table-responsive" id="clasificacion">

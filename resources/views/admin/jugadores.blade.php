@@ -14,6 +14,7 @@
                                 <th scope="col">Nombre</th>
                                 <th scope="col">Apellido</th>
                                 <th scope="col">Pagado</th>
+                                <th scope="col">Estado</th>
                                 <th scope="col"></th>
                                 <th scope="col"></th>
                                 <th scope="col"></th>
@@ -24,6 +25,7 @@
                                 <tr>
                                     <th scope="row" style="vertical-align: middle;">{{ $item->nombre }}</th>
                                     <td style="vertical-align: middle;">{{ $item->apellidos }}</td>
+                                    <td style="vertical-align: middle;">{{ $item->pagado }}</td>
                                     @if ($item->state == 0)
                                         <td style="vertical-align: middle;">
                                           <svg xmlns="http://www.w3.org/2000/svg" style="color: red;" width="30" height="30" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">

@@ -43,6 +43,7 @@ class HomeController extends Controller
     public function clasificacion()
     {
         $Allplayer = Player::All();
+        $Alljornadas = Clasificacion::All();
 
         return view('admin/clasificacion')->with(compact('Allplayer'));
         // return view('admin/clasificacion');

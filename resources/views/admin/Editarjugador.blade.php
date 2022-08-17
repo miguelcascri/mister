@@ -15,7 +15,7 @@
                 </div>
                 <div class="col-md-12" style="margin-bottom: 3%">
                     <label> Dinero restante</label>
-                    <input type="number" class="form-control" placeholder="10" value="{{ $player->pagado }}"
+                    <input type="number" step="any" class="form-control" placeholder="10" value="{{ $player->pagado }}"
                         name="pagado">
                 </div>
                 <div class="col-md-12" style="margin-bottom: 3%">

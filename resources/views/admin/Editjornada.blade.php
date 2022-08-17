@@ -18,14 +18,14 @@
                             <option class="bg-success" selected value="{{$name12[0]->id}}">{{ $name12[0] -> nombre}} {{$name12[0] -> apellidos}}</option>
                             @foreach ($Allplayer as $key)
                             
-                            <option value="{{ $key->id }}"> {{ $key->nombre }}{{ $key->apellidos }} </option>
+                            <option value="{{ $key->id }}"> {{ $key->nombre }} {{ $key->apellidos }} </option>
                         @endforeach
                         </select>
                         <label for="exampleInputEmail1" class="form-label"><b>Puesto 13</b></label>
                         <select class="form-select form-select mb-3" name="puesto13">
                             <option class="bg-success" selected value="{{$name13[0]->id}}">{{ $name13[0] -> nombre}} {{$name13[0] -> apellidos}}</option>
                             @foreach ($Allplayer as $key)
-                                <option value="{{ $key->id }}"> {{ $key->nombre }}{{ $key->apellidos }} </option>
+                                <option value="{{ $key->id }}"> {{ $key->nombre }} {{ $key->apellidos }} </option>
                             @endforeach
                         </select>
                         
@@ -33,7 +33,7 @@
                         <select class="form-select form-select mb-3" name="puesto14">
                             <option class="bg-success" selected value="{{$name14[0]->id}}">{{ $name14[0] -> nombre}} {{$name14[0] -> apellidos}}</option>
                             @foreach ($Allplayer as $key)
-                                <option value="{{ $key->id }}">{{ $key->nombre }}{{ $key->apellidos }}</option>
+                                <option value="{{ $key->id }}">{{ $key->nombre }} {{ $key->apellidos }}</option>
                             @endforeach
                         </select>
                         <label for="exampleInputEmail1" class="form-label"><b>Puesto 15</b></label>

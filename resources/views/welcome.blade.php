@@ -468,25 +468,28 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <h4> Ultimos de la Jornada  </h4>
+                <h4> Ultimos de la Jornada {{$integer}} </h4>
                 <div class="table-responsive">
                     <table class="table table-hover">
                             <tr>
                                 <th scope="row" style="vertical-align: middle;">12º</th>
-                                <td> Miguel</td>
+                                <td> {{ $name12[0] -> nombre}} {{$name12[0] -> apellidos}} </td>
                             </tr>
                             <tr>
                                 <th scope="row" style="vertical-align: middle;">13º</th>
-                                <td>Juan</td>
+                                <td>{{ $name13[0] -> nombre}} {{$name13[0] -> apellidos}}</td>
                             </tr>
                             <tr>
                                 <th scope="row" style="vertical-align: middle;">14º</th>
+                                <td>{{ $name14[0] -> nombre}} {{$name14[0] -> apellidos}}</td>
                             </tr>
                             <tr>
                                 <th scope="row" style="vertical-align: middle;">15º</th>
+                                <td>{{ $name15[0] -> nombre}} {{$name15[0] -> apellidos}}</td>
                             </tr>
                             <tr>
                                 <th scope="row" style="vertical-align: middle;">16º</th>
+                                <td>{{ $name16[0] -> nombre}} {{$name16[0] -> apellidos}}</td>
                             </tr>
                         <tbody>
 

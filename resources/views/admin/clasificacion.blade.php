@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                <button type="button" class="btn btn-primary mb-4" data-toggle="modal" data-target="#exampleModalCenter">
                     + Nueva jornada
                 </button>
 
@@ -54,7 +54,7 @@
                                         </select>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                                         <button type="submit" class="btn btn-primary">Añadir</button>
                                     </div>
 
@@ -76,10 +76,11 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach($Alljornadas as $item)
                             <tr>
-                                <td> Jornada 1</td>
+                                <td> Jornada {{$item-> jornada}} </td>
                                 <td>
-                                    <a class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                    <a href="{{ route('Editjornada', $item->id) }}" class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                                             height="16" fill="currentColor" class="bi bi-pencil-square"
                                             viewBox="0 0 16 16">
                                             <path
@@ -100,6 +101,7 @@
                                     </a>
                                 </td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -107,6 +109,7 @@
         </div>
     </div>
 @endsection
+
 
 <script>
     $(document).ready(function() {

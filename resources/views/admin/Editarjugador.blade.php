@@ -14,6 +14,11 @@
                         name="apellidos">
                 </div>
                 <div class="col-md-12" style="margin-bottom: 3%">
+                    <label> Dinero restante</label>
+                    <input type="number" class="form-control" placeholder="10" value="{{ $player->pagado }}"
+                        name="pagado">
+                </div>
+                <div class="col-md-12" style="margin-bottom: 3%">
                     <select class="form-select" name="state" aria-label="Default select example">
 
                         @if ($player->state == 0)

@@ -24,7 +24,7 @@ Route::get('/', [App\Http\Controllers\PersonController::class, 'index']);
 Route::get('/admin/clasificacion', [App\Http\Controllers\HomeController::class, 'clasificacion'])->name('clasificacion');
 Route::get('/admin/jugadores', [App\Http\Controllers\HomeController::class, 'jugadores'])->name('jugadores');
 Route::get('/admin/home', [App\Http\Controllers\HomeController::class, 'index'])->name('inicio');
-Route::get('/admin/contabilidad', [App\Http\Controllers\HomeController::class, 'contabilidad'])->name('contabilidad');
+// Route::get('/admin/contabilidad', [App\Http\Controllers\HomeController::class, 'contabilidad'])->name('contabilidad');
 Auth::routes();
 Route::get('logout', [App\Http\Controllers\LoginController::class, 'logout'])->name('logout');
 Route::get('admin/home', [App\Http\Controllers\HomeController::class, 'index'])->name('inicio');
@@ -32,3 +32,6 @@ Route::post('admin/jugadores', [App\Http\Controllers\HomeController::class, 'sto
 Route::get('admin/jugador/{id}', [App\Http\Controllers\HomeController::class, 'editplayer'])->name('editPlayer');
 Route::post('admin/Editarjugador/{id}', [App\Http\Controllers\HomeController::class, 'UpdatePlayer'])->name('UpdatePlayer');
 Route::get('admin/', [App\Http\Controllers\HomeController::class, 'nuevajornada'])->name('nuevajornada');
+
+Route::get('admin/clasificacion/{id}', [App\Http\Controllers\HomeController::class, 'Editjornada'])->name('Editjornada');
+Route::post('admin/Editjornada/{id}', [App\Http\Controllers\HomeController::class, 'Updatejornada'])->name('Updatejornada');

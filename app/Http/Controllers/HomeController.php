@@ -43,9 +43,9 @@ class HomeController extends Controller
     public function clasificacion()
     {
         $Allplayer = Player::All();
-        // $Alljornadas = Clasificacion::All();
+        $Alljornadas = Clasificacion::All();
 
-        return view('admin/clasificacion')->with(compact('Allplayer'));
+        return view('admin/clasificacion')->with(compact('Allplayer','Alljornadas'));
         // return view('admin/clasificacion');
     }
 
@@ -71,6 +71,7 @@ class HomeController extends Controller
 
         $player->nombre = $request->input('nombre');
         $player->apellidos = $request->input('apellidos');
+        $player->pagado = $request->input('pagado');
         $player->state = $request->input('state');
 
         $player->save();
@@ -167,6 +168,39 @@ class HomeController extends Controller
         
         // $Allplayer = Player::aÇll();
         // return redirect('admin/clasificacion')->with(compact('Allplayer'));
+        return redirect('admin/clasificacion');
+    }
+
+    public function Editjornada($id)
+    {
+        $jornada = Clasificacion::find($id);
+        $Allplayer = player::All();
+
+        $name12 = DB::select("SELECT players.nombre, players.apellidos, players.id FROM `clasificacion`,`players` WHERE `puesto12`= players.id AND puesto12 = $jornada->puesto12  AND clasificacion.id = $id");
+        
+        $name13 = DB::select("SELECT players.nombre, players.apellidos, players.id FROM `clasificacion`,`players` WHERE `puesto13`= players.id AND puesto13 = $jornada->puesto13  AND clasificacion.id = $id");
+        $name14 = DB::select("SELECT players.nombre, players.apellidos, players.id FROM `clasificacion`,`players` WHERE `puesto14`= players.id AND puesto14 = $jornada->puesto14  AND clasificacion.id = $id");
+        $name15 = DB::select("SELECT players.nombre, players.apellidos, players.id FROM `clasificacion`,`players` WHERE `puesto15`= players.id AND puesto15 = $jornada->puesto15  AND clasificacion.id = $id");
+        $name16 = DB::select("SELECT players.nombre, players.apellidos, players.id FROM `clasificacion`,`players` WHERE `puesto16`= players.id AND puesto16 = $jornada->puesto16  AND clasificacion.id = $id");
+       
+        // dd($name12);
+
+        return view('admin/Editjornada')->with(compact('jornada','Allplayer','name12','name13','name14','name15','name16'));
+    }
+
+    public function UpdateJornada(Request $request, $id)
+    {
+        $jornada = Clasificacion::find($id);
+
+        $jornada->jornada = $request->input('jornada');
+        $jornada->puesto12 = $request->input('puesto12');
+        $jornada->puesto13 = $request->input('puesto13');
+        $jornada->puesto14 = $request->input('puesto14');
+        $jornada->puesto15 = $request->input('puesto15');
+        $jornada->puesto16 = $request->input('puesto16');
+        $jornada->save();
+       
+
         return redirect('admin/clasificacion');
     }
 }

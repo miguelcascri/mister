@@ -138,7 +138,17 @@ class HomeController extends Controller
         $jornada->puesto15 = $request->input('puesto15');
         $puesto15 = $request->input('puesto15');
 
+        $jugador15 = Player::find($puesto15);
+        // dd($jugador);
+        $pagoactual=  $jugador15->pagado;
+        // dd($pagoactual);
+        $pagonuevo =  $pagoactual - 1.50;
 
+        // dd($pagonuevo);
+        $jugador15->pagado = $pagonuevo;
+       
+
+        $jugador15->save();
 
 
 

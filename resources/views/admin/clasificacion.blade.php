@@ -22,31 +22,31 @@
                                     <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label">Jornada</label>
                                         <input class="form-control" type="number" name="jornada">
-                                        <label for="exampleInputEmail1" class="form-label"><b>Puesto 12</b></label>
+                                        <label for="exampleInputEmail1" class="form-label"><b>Puesto 13</b></label>
                                         <select class="form-select form-select mb-3" name="puesto12">
                                         @foreach($Allplayer as $key)
                                             <option value="{{$key->id}}">{{$key -> nombre }} {{$key->apellidos}}</option>
                                         @endforeach
                                         </select>
-                                        <label for="exampleInputEmail1" class="form-label"><b>Puesto 13</b></label>
+                                        <label for="exampleInputEmail1" class="form-label"><b>Puesto 14</b></label>
                                         <select class="form-select form-select mb-3" name="puesto13">
                                         @foreach($Allplayer as $key)
                                             <option value="{{$key->id}}">{{$key -> nombre }} {{$key->apellidos}}</option>
                                         @endforeach
                                         </select>
-                                        <label for="exampleInputEmail1" class="form-label"><b>Puesto 14</b></label>
+                                        <label for="exampleInputEmail1" class="form-label"><b>Puesto 15</b></label>
                                         <select class="form-select form-select mb-3" name="puesto14">
                                         @foreach($Allplayer as $key)
                                             <option value="{{$key->id}}">{{$key -> nombre }} {{$key->apellidos}}</option>
                                         @endforeach
                                         </select>
-                                        <label for="exampleInputEmail1" class="form-label"><b>Puesto 15</b></label>
+                                        <label for="exampleInputEmail1" class="form-label"><b>Puesto 16</b></label>
                                         <select class="form-select form-select mb-3" name="puesto15">
                                         @foreach($Allplayer as $key)
                                             <option value="{{$key->id}}">{{$key -> nombre }} {{$key->apellidos}}</option>
                                         @endforeach
                                         </select>
-                                        <label for="exampleInputEmail1" class="form-label"><b>Puesto 16</b></label>
+                                        <label for="exampleInputEmail1" class="form-label"><b>Puesto 17</b></label>
                                         <select class="form-select form-select mb-3" name="puesto16">
                                         @foreach($Allplayer as $key)
                                             <option value="{{$key->id}}">{{$key -> nombre }} {{$key->apellidos}}</option>
@@ -111,14 +111,4 @@
 @endsection
 
 
-<script>
-    $(document).ready(function() {
 
-        $('#clasificacion').DataTable({
-            "language": {
-                "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
-            }
-
-        });
-    });
-</script>

@@ -11,6 +11,8 @@
     <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css"
+        crossorigin="anonymous">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
@@ -431,36 +433,20 @@
         <div class="row">
             <div class="col-md-7">
                 <div class="table-responsive">
-                    <table class="table table-hover">
+                    <table class="table table-hover" id="tablewelcome">
                         <thead>
                             <tr>
                                 <th scope="col">Nombre</th>
                                 <th scope="col">Apellido</th>
                                 <th scope="col">Pagado</th>
-                                {{-- <th scope="col">Pagado</th> --}}
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($Allplayer as $item)
                                 <tr>
-                                    <th scope="row" style="vertical-align: middle;">{{ $item->nombre }}</th>
+                                    <td scope="row" style="vertical-align: middle;">{{ $item->nombre }}</td>
                                     <td style="vertical-align: middle;">{{ $item->apellidos }}</td>
                                     <td style="vertical-align: middle;">{{ $item->pagado }}€</td>
-                                    {{-- @if ($item->state == 0)
-                                            <td style="vertical-align: middle;">
-                                              <svg xmlns="http://www.w3.org/2000/svg" style="color: red;" width="30" height="30" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-                                                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-                                              </svg>
-                                            </td>
-                                        @elseif ($item->state == 1)
-                                            <td style="vertical-align: middle;">
-                                                <svg style="color: green;" xmlns="http://www.w3.org/2000/svg" width="30"
-                                                    height="30" fill="currentColor" class="bi bi-check" viewBox="0 0 16 16">
-                                                    <path
-                                                        d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z" />
-                                                </svg>
-                                            </td>
-                                        @endif --}}
                                 </tr>
                             @endforeach
                         </tbody>
@@ -468,29 +454,29 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <h4> Ultimos de la Jornada {{$integer}} </h4>
+                <h4> Ultimos de la Jornada {{ $integer }} </h4>
                 <div class="table-responsive">
                     <table class="table table-hover">
-                            <tr>
-                                <th scope="row" style="vertical-align: middle;">12º</th>
-                                <td> {{ $name12[0] -> nombre}} {{$name12[0] -> apellidos}} </td>
-                            </tr>
-                            <tr>
-                                <th scope="row" style="vertical-align: middle;">13º</th>
-                                <td>{{ $name13[0] -> nombre}} {{$name13[0] -> apellidos}}</td>
-                            </tr>
-                            <tr>
-                                <th scope="row" style="vertical-align: middle;">14º</th>
-                                <td>{{ $name14[0] -> nombre}} {{$name14[0] -> apellidos}}</td>
-                            </tr>
-                            <tr>
-                                <th scope="row" style="vertical-align: middle;">15º</th>
-                                <td>{{ $name15[0] -> nombre}} {{$name15[0] -> apellidos}}</td>
-                            </tr>
-                            <tr>
-                                <th scope="row" style="vertical-align: middle;">16º</th>
-                                <td>{{ $name16[0] -> nombre}} {{$name16[0] -> apellidos}}</td>
-                            </tr>
+                        <tr>
+                            <th scope="row" style="vertical-align: middle;">12º</th>
+                            <td> {{ $name12[0]->nombre }} {{ $name12[0]->apellidos }} </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" style="vertical-align: middle;">13º</th>
+                            <td>{{ $name13[0]->nombre }} {{ $name13[0]->apellidos }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" style="vertical-align: middle;">14º</th>
+                            <td>{{ $name14[0]->nombre }} {{ $name14[0]->apellidos }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" style="vertical-align: middle;">15º</th>
+                            <td>{{ $name15[0]->nombre }} {{ $name15[0]->apellidos }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" style="vertical-align: middle;">16º</th>
+                            <td>{{ $name16[0]->nombre }} {{ $name16[0]->apellidos }}</td>
+                        </tr>
                         <tbody>
 
                         </tbody>
@@ -500,11 +486,30 @@
         </div>
 
     </div>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
+    {{-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> --}}
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+    {{-- <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script> --}}
+    {{-- <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script> --}}
+    {{-- <script src="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css"></script> --}}
+
+
+    <script>
+        (document).ready(function() {
+
+            $('#tablewelcome').DataTable({
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+                }
+
+            });
+        });
+    </script>
 </body>
 
 </html>
